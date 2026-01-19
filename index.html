@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Favian Rifqiziwani</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-wrapper">
+            <div class="spinner"></div>
+            <h2 class="loader-text">FAVIAN<span>.</span></h2>
+        </div>
+    </div>
+
+    <nav id="main-nav">
+        <div class="container nav-wrapper">
+            <div class="logo">Favian<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#education">Pendidikan</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#portfolio">Proyek</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content reveal">
+            <span class="badge">Creative Multimedia Designer</span>
+            <h1>Visualisasikan Ide <br><span class="text-gradient">Menjadi Realita</span></h1>
+            <p>Membantu brand tumbuh melalui Desain Grafis, Video Editing, dan Solusi Web yang Modern.</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn btn-primary">Lihat Portofolio</a>
+                <a href="#contact" class="btn btn-outline-light">Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container section-padding">
+        <div class="about-grid">
+            <div class="about-img reveal">
+                <div class="img-frame"><img src="img/profile.jpg" alt="Favian"></div>
+            </div>
+            <div class="about-text reveal reveal-delay-1">
+                <span class="sub-title">Tentang Saya</span>
+                <h2>Kreativitas Tanpa <span>Batas</span></h2>
+                <p id="about-description"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-blue-tint section-padding">
+        <div class="container text-center">
+            <div class="section-header reveal">
+                <span class="sub-title">Keahlian</span>
+                <h2>Apa Yang Saya <span>Kuasai</span></h2>
+            </div>
+            <div id="skills-container" class="skills-grid"></div>
+            <div id="software-container" class="software-andalan reveal"></div>
+        </div>
+    </section>
+
+    <section id="education" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="sub-title">Edukasi</span>
+                <h2>Riwayat <span>Pendidikan</span></h2>
+            </div>
+            <div id="education-container" class="edu-grid"></div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="bg-blue-tint section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="sub-title">Portofolio</span>
+                <h2>Karya <span>Terpilih</span></h2>
+            </div>
+            <div id="portfolio-container" class="portfolio-grid"></div>
+        </div>
+    </section>
+
+    <footer id="contact" class="section-padding">
+        <div class="container text-center reveal">
+            <span class="sub-title">Kontak</span>
+            <h2>Mari <span>Terhubung</span></h2>
+            <div id="contact-container" class="contact-grid"></div>
+            <p class="footer-copy">&copy; 2026 Favian Rifqiziwani. Built with Passion.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

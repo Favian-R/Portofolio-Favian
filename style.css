@@ -1,0 +1,141 @@
+:root {
+    --primary: #0066FF;
+    --dark: #0A192F;
+    --light: #64748B;
+    --white: #FFFFFF;
+    --accent: #E0EEFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+html { scroll-behavior: smooth; }
+body { color: var(--dark); background: var(--white); overflow-x: hidden; }
+a { text-decoration: none; outline: none !important; border: none !important; }
+
+/* --- 1. LOADER (Fix Rata Tengah) --- */
+#loader {
+    position: fixed; inset: 0; z-index: 9999; background: var(--dark);
+    display: flex; justify-content: center; align-items: center; transition: 0.6s ease;
+}
+.loader-wrapper {
+    display: flex; flex-direction: column; align-items: center; gap: 20px;
+}
+.spinner {
+    width: 50px; height: 50px; border: 5px solid rgba(255,255,255,0.1);
+    border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite;
+}
+.loader-text { color: #fff; letter-spacing: 5px; font-weight: 800; }
+.loader-text span { color: var(--primary); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* --- 2. NAVIGASI (Kanan) --- */
+nav { position: fixed; width: 100%; top: 0; z-index: 1000; padding: 25px 0; transition: 0.4s; }
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 800; color: #fff; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 30px; margin-left: auto; }
+.nav-links a { color: #fff; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+
+nav.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 15px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+nav.scrolled .logo, nav.scrolled .nav-links a { color: var(--dark); }
+
+/* --- 3. HERO --- */
+.hero {
+    height: 100vh; text-align: center; color: #fff; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(0, 102, 255, 0.7)), 
+                url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070');
+    background-size: cover; background-position: center; background-attachment: fixed;
+}
+.hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; margin: 20px 0; }
+.text-gradient { background: linear-gradient(to right, #00C2FF, #E0EEFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.badge { background: rgba(255,255,255,0.1); padding: 8px 18px; border-radius: 50px; font-weight: 600; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); }
+.btn { padding: 14px 32px; border-radius: 12px; font-weight: 700; display: inline-block; transition: 0.4s; margin: 10px; border: none; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-outline-light { border: 2px solid #fff; color: #fff; }
+
+/* --- 4. ABOUT --- */
+.container { max-width: 1140px; margin: auto; padding: 0 20px; }
+.section-padding { padding: 100px 0; }
+.about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+.img-frame { border-radius: 25px; overflow: hidden; transform: rotate(-3deg); box-shadow: 20px 20px 50px rgba(0,0,0,0.1); transition: 0.6s; }
+.img-frame:hover { transform: rotate(0deg) scale(1.02); }
+.img-frame img { width: 100%; display: block; }
+.sub-title { color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 15px; display: block; }
+.stats-grid { display: flex; gap: 20px; margin-top: 30px; }
+.stat-card { background: var(--accent); padding: 25px; border-radius: 20px; flex: 1; text-align: center; }
+.stat-card i { font-size: 1.5rem; color: var(--primary); margin-bottom: 10px; display: block; }
+
+/* --- 5. SKILLS & SOFTWARE (Capsule Style) --- */
+.bg-blue-tint { background: #F4F9FF; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 50px 0; }
+.skill-card { background: #fff; padding: 40px; border-radius: 25px; border: 1px solid #eee; transition: 0.4s; }
+.skill-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+.skill-icon-bg { 
+    width: 60px; height: 60px; background: var(--accent); color: var(--primary);
+    display: flex; align-items: center; justify-content: center; border-radius: 15px;
+    font-size: 1.5rem; margin: 0 auto 20px;
+}
+
+.software-andalan { margin-top: 60px; }
+.soft-title { font-weight: 700; margin-bottom: 25px; color: var(--dark); }
+.capsule-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.capsule {
+    padding: 10px 25px; border: 1.5px solid var(--primary); border-radius: 50px;
+    font-weight: 600; color: var(--primary); font-size: 0.9rem; transition: 0.3s;
+}
+.capsule:hover { background: var(--primary); color: #fff; }
+
+/* --- 6. EDUCATION & PORTFOLIO --- */
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.edu-card { position: relative; height: 350px; border-radius: 20px; overflow: hidden; }
+.edu-card img { width: 100%; height: 100%; object-fit: cover; }
+.edu-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,25,47,0.8), transparent); display: flex; align-items: flex-end; padding: 30px; }
+.edu-info { color: #fff; text-align: left; }
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+.portfolio-item { background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid #eee; }
+.portfolio-item img { width: 100%; height: 250px; object-fit: cover; }
+.portfolio-desc { padding: 25px; text-align: left; }
+
+/* --- Global Link Style --- */
+a, a:visited { 
+    text-decoration: none; 
+    outline: none; 
+    border: none; 
+    /* color: inherit;  <-- Hapus atau komentari jika ingin memaksa warna tertentu */
+}
+
+/* --- Khusus Judul Portofolio Agar Tetap Biru --- */
+.portfolio-desc h3 {
+    color: var(--primary) !important; /* Memaksa tetap menggunakan warna biru utama */
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+/* Warna saat kursor diarahkan (hover) agar lebih interaktif */
+.portfolio-item:hover .portfolio-desc h3 {
+    color: #0052cc !important; /* Biru yang sedikit lebih gelap saat di-hover */
+}
+
+/* Tambahan untuk teks deskripsi agar tetap rapi */
+.portfolio-desc h5 {
+    color: var(--light);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* --- 7. CONTACT & FOOTER --- */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+.contact-card { background: #fff; padding: 30px; border-radius: 20px; border: 1px solid #eee; color: var(--dark); transition: 0.3s; }
+.contact-card:hover { background: var(--primary); color: #fff; transform: translateY(-5px); }
+.contact-card i { font-size: 2rem; margin-bottom: 10px; display: block; }
+.footer-copy { margin-top: 50px; opacity: 0.5; font-size: 0.9rem; }
+
+/* --- REVEAL --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.2s; }
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .about-grid, .edu-grid { grid-template-columns: 1fr; }
+}
